@@ -61,6 +61,12 @@ if st.button("Start Again", use_container_width=True):
         del st.session_state[key]
     st.rerun()
 
+if 'stated' in st.session_state:
+    if st.session_state.stated:
+        time.sleep(40)
+        st.rerun()
+
+
 if "messages" not in st.session_state and "prompt" in st.session_state:
     st.session_state.prompt = st.session_state.prompt + '\n\n Remember to keep it to internship roles and be clear that they are not qualified for specific reasons, you should be very critical but not mean. Also address them in the 2nd person. Stay formal and keep it numbered to 3 clear specific jobs. ie. 1. [Role Title]: [Reason]. Do NOT exceed 150 words and do NOT use the word Oh. The last line should explain why youre choosing other candidates.'
     if not st.session_state.loaded:
