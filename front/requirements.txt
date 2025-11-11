@@ -1,0 +1,2 @@
+streamlit
+xai_sdk
